@@ -78,7 +78,9 @@ const TrainingsList = () => {
                                         </TableCell>
                                         <TableCell align="right">Edit</TableCell>
                                         <TableCell align="right">
-                                            <Button></Button>
+                                            <Link to={`/trainings/details/${row.id}`} className={classes.TrainingsAddButton}>
+                                                <Button>Details</Button>
+                                            </Link>
                                         </TableCell>
                                     </TableRow>
                                 ))}
