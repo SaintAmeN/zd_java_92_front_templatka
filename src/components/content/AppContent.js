@@ -12,22 +12,7 @@ const AppContent = () => {
     return (
         <div className={classes.AppContent}>
             <Switch>
-                <Route path={'/trainings/add/attendee/:trainingId'}>
-                    <TrainingAddAttendee/>
-                </Route>
-                <Route path={'/trainings/details/:trainingId'}>
-                    <TrainingDetails/>
-                </Route>
-                <Route path={'/trainings/add'}>
-                    <TrainingsForm/>
-                </Route>
-                <Route path={'/trainings'}>
-                    <TrainingsList/>
-                </Route>
-                <Route path={'/attendees/add'}>
-                    <AttendeesForm/>
-                </Route>
-                <Route path={'/attendees'}>
+                <Route path={'/zakladka'}>
                     <AttendeesList/>
                 </Route>
                 <Route path={'/'}>

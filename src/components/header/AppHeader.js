@@ -7,14 +7,10 @@ import logo from "../../logo.svg";
 
 const HEADER_BUTTONS = [
     {
-        name: 'Trainings', /* Link do tablicy z listą rekordów/danych o kursach*/
-        href: '/trainings',
+        // TODO: zmien
+        name: 'Tutaj Dodaj Swoja Zakladke', /* Link do tablicy z listą rekordów/danych o kursach*/
+        href: '/zakladka',
         icon: (<Storage fontSize={"small"}/>),
-    },
-    {
-        name: 'Attendees', /* Link do tablicy z listą rekordów/danych o uczestnikach */
-        href: '/attendees',
-        icon: (<PeopleAlt fontSize={"small"}/>),
     },
     {
         name: 'Home',
