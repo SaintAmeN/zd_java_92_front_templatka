@@ -8,9 +8,11 @@ import AttendeesTable from "../../attendees/AttendeesTable";
 
 const TrainingDetails = () => {
     const {trainingId} = useParams();
-    const [training, setTraining] = useState({});
+    const [training, setTraining] = useState({
+        'attendees': [],
+    });
 
-    useEffect(() => {
+    const pullRecords = () => {
         axios.get(`http://localhost:8080/trainings/${trainingId}`)
             .then((data) => {
                 // data ma pole data
@@ -22,6 +24,10 @@ const TrainingDetails = () => {
             .catch((error) => {
                 console.log("Otrzymaliśmy odpowiedź o błędzie!")
             });
+    }
+
+    useEffect(() => {
+        pullRecords();
     }, []);
 
     return (
@@ -54,7 +60,12 @@ const TrainingDetails = () => {
                     </Grid>
                 </Grid>
             </CardComponent>
-            <AttendeesTable rows={training.attendees} onDelete={}/>
+            <div className={classes.AddButtonContainer}>
+                <Link to={`/trainings/add/attendee/${training.id}`} className={classes.TrainingsAddButton}>
+                    <Button variant="outlined">Add New</Button>
+                </Link>
+            </div>
+            <AttendeesTable rows={training.attendees} refreshData={pullRecords}/>
         </div>
     )
 }
