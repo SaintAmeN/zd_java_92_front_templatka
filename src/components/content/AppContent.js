@@ -7,13 +7,14 @@ import AttendeesList from "./attendees/AttendeesList";
 import TrainingDetails from "./trainings/details/TrainingDetails";
 import TrainingAddAttendee from "./trainings/details/TrainingAddAttendee";
 import AttendeesForm from "./attendees/AttendeesForm";
+import ContentZakladka from "./zakladka/ContentZakladka";
 
 const AppContent = () => {
     return (
         <div className={classes.AppContent}>
             <Switch>
                 <Route path={'/zakladka'}>
-                    <AttendeesList/>
+                    <ContentZakladka/>
                 </Route>
                 <Route path={'/'}>
                     <ContentHome/>
