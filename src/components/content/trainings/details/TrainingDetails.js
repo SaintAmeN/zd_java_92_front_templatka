@@ -4,6 +4,7 @@ import {Link, useParams} from "react-router-dom";
 import {Button, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@material-ui/core";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import AttendeesTable from "../../attendees/AttendeesTable";
 
 const TrainingDetails = () => {
     const {trainingId} = useParams();
@@ -53,9 +54,7 @@ const TrainingDetails = () => {
                     </Grid>
                 </Grid>
             </CardComponent>
-            <CardComponent title={'Training Attendees'}>
-
-            </CardComponent>
+            <AttendeesTable rows={training.attendees} onDelete={}/>
         </div>
     )
 }

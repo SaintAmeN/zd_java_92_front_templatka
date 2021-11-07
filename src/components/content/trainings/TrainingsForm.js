@@ -108,6 +108,7 @@ const TrainingsForm = () => {
                             </Button>
                         </Grid>
                     </Grid>
+                    <Grid item xs={1}/>
                 </Grid>
             </CardComponent>
         </div>

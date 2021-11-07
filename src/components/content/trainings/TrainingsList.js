@@ -34,7 +34,9 @@ const TrainingsList = () => {
     }
 
     useEffect(() => {
+        console.log('Zaladuj')
         pullRecordsFromDatabaseServer();
+        console.log('Zaladowalem')
     }, [])
 
     return (
