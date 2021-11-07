@@ -33,9 +33,19 @@ const AttendeesTable = (props) => {
                     <TableBody>
                         {props.rows.map((row) => {
                             let addButton = (<></>);
+                            let removeButton = (<></>);
                             if (props.onAdd) {
                                 addButton = (<TableCell align="right">
-                                    <Button onClick={() => {props.onAdd(row.id)}}>Add</Button>
+                                    <Button onClick={() => {
+                                        props.onAdd(row.id)
+                                    }}>Add</Button>
+                                </TableCell>)
+                            }
+                            if (props.onRemove) {
+                                removeButton = (<TableCell align="right">
+                                    <Button onClick={() => {
+                                        props.onRemove(row.id)
+                                    }}>Remove</Button>
                                 </TableCell>)
                             }
 
@@ -50,7 +60,9 @@ const AttendeesTable = (props) => {
                                         handleRemoveRecord(row)
                                     }}>Delete</Button>
                                 </TableCell>
-                                {addButton}
+                                {
+                                    (props.isAdded !== undefined && props.isAdded(row.id)) ? removeButton : addButton
+                                }
 
                             </TableRow>)
                         })}
